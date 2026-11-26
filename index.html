@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>A Little Message</title>
+
+<style>
+:root {
+    --ink: #584247;
+    --rose: #a85e6b;
+    --paper: #fffdfb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    background: #f7f2f0;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    display: flex;
+    justify-content: center;
+    padding: 50px 18px;
+}
+
+main {
+    width: min(720px, 100%);
+    background: var(--paper);
+    padding: clamp(35px, 8vw, 75px);
+    border: 1px solid #eee4e1;
+    box-shadow: 0 8px 35px rgba(75, 45, 45, 0.07);
+}
+
+.start-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 55px;
+}
+
+#startButton {
+    border: 1px solid #d9b8be;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--rose);
+    padding: 13px 27px;
+    font: 16px Georgia, serif;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+#startButton:hover {
+    background: var(--rose);
+    color: white;
+}
+
+.message {
+    font-size: clamp(1.05rem, 2vw, 1.17rem);
+    line-height: 1.95;
+    letter-spacing: 0.1px;
+    text-align: left;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    min-height: 240px;
+}
+
+.cursor {
+    display: inline-block;
+    width: 1px;
+    height: 1.15em;
+    background: var(--rose);
+    vertical-align: -0.16em;
+    margin-left: 2px;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    main {
+        padding: 35px 25px;
+    }
+
+    .start-wrap {
+        margin-bottom: 40px;
+    }
+
+    .message {
+        line-height: 1.85;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cursor {
+        animation: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main>
+  <div class="start-wrap">
+    <button id="startButton" type="button">Read my message</button>
+  </div>
+
+  <article class="message" aria-live="polite">
+    <span id="typed"></span><span class="cursor" id="cursor"></span>
+  </article>
+</main>
+
+<audio id="bgMusic" src="Coming Up Roses - Best Part.mp3" loop preload="auto"></audio>
+
+<script>
+
+/* =================================
+   WRITE YOUR MESSAGE HERE
+   Add unlimited paragraphs.
+   Leave a blank line between them.
+================================= */
+
+const message = `Dearest Maye,
+
+I hope you'll stay for a little while and read everything with your heart.
+
+There are so many things I've been wanting to tell you, so many thoughts and feelings that I've struggled to put into words. Sometimes, I feel like no matter how much I try to express what's inside me, there will always be something I haven't quite managed to say. But through this little corner of the internet, I hope I can share what's been on my mind, let you see a little more of what's in my heart, and hopefully bring us a little closer.
+
+There's something about myself that I've been trying to understand, and something I don't want to keep overlooking.
+
+I know there have been multiple times when I failed to support you the way you deserved. Times when you were excited about something, wanted to pursue something, or simply wanted to share a part of your day with me, but instead of making you feel appreciated, I responded in ways that hurt or disappointed you.
+
+And honestly, I don't completely understand why I've reacted that way. I wish I could give you a clear explanation, but I don't want to invent reasons just to make my actions easier to understand or excuse. Whatever was going on inside me, it doesn't change the fact that you were the one who had to experience those reactions. You deserved encouragement, understanding, and someone who could genuinely be happy for you.
+
+I also recognize that my fear of losing you has sometimes affected the way I've treated you. I think I've allowed that fear and my own feelings to get in the way of giving you the kind of love and support you deserve. But I don't want my fears to become something you have to carry, nor do I want you to feel restricted because of things I'm still trying to work through.
+
+Maye, I want you to know that you never have to make yourself smaller just to make room for me. You deserve to enjoy the things that make you happy, pursue the things you've been wanting to do, discover new interests, and experience life in your own way. You shouldn't have to feel guilty for being excited about something or hesitate to share your happiness with me because you're unsure of how I'll react.
+
+I want to be someone you can share those moments with comfortably. Someone who listens when you talk about the things you love, celebrates even your smallest victories, takes an interest in what matters to you, and supports you even when those things exist outside of our relationship. Your happiness shouldn't feel like something you need to compromise for the sake of ours.
+
+I know this isn't the first time I've acknowledged these things, and I understand that hearing them again might not mean as much when you've already experienced similar situations before. I don't expect these words to erase what happened, nor do I expect you to immediately feel assured simply because I've written them down.
+
+But I want you to know that I'm not overlooking the hurt I've caused. I don't want to keep repeating the same patterns and treating every apology as if it were a fresh start without addressing what came before. I want to understand myself better, recognize the moments when my reactions are becoming unfair to you, and learn to respond with more patience, understanding, and care.
+
+You deserve to feel loved without having to constantly wonder whether you'll be supported, understood, or appreciated. You deserve to have someone who doesn't just say they're happy to see you grow, but genuinely makes you feel that way.
+
+And beyond all of this, I hope you know how much I appreciate having you in my life. I don't want our relationship to become a place where either of us has to lose parts of ourselves just to keep the other happy. I want us to have room to grow individually while still choosing to grow together.
+
+I love you, Maye. Not just for the moments we share, but for the person you are, the things that make you happy, the dreams you carry, and all the little things that make you who you are. I want to keep learning how to love you in a way that makes you feel appreciated, supported, and free to be yourself.
+
+You don't have to find the perfect words after reading this. I just hope you understand what I've been trying to tell you, and I hope that, in time, my actions will give these words the meaning they deserve.
+
+Loving you was never a mistake.
+
+With all my love,
+
+Jarred`;
+
+/* =================================
+   TYPEWRITING SETTINGS
+================================= */
+
+const BASE_DELAY = 50;
+const COMMA_PAUSE = 300;
+const SENTENCE_PAUSE = 500;
+
+/* =================================
+   TYPEWRITER
+================================= */
+
+const target = document.getElementById("typed");
+const cursor = document.getElementById("cursor");
+const music = document.getElementById("bgMusic");
+const startButton = document.getElementById("startButton");
+
+let index = 0;
+let started = false;
+
+function typeNext() {
+
+  if (index >= message.length) {
+    cursor.style.display = "none";
+    startButton.textContent = "Message finished";
+    return;
+  }
+
+  const character = message.charAt(index++);
+  target.textContent += character;
+
+  let delay = BASE_DELAY;
+
+  if (/[,.]/.test(character)) delay += COMMA_PAUSE;
+  if (/[!?]/.test(character)) delay += SENTENCE_PAUSE;
+  if (character === "\n") delay += 350;
+
+  setTimeout(typeNext, delay);
+}
+
+
+/* =================================
+   START EVERYTHING
+================================= */
+
+function startExperience() {
+
+  if (started) return;
+
+  started = true;
+
+  startButton.disabled = true;
+  startButton.textContent = "Enjoy reading";
+
+  // Remove button after clicking
+  startButton.style.display = "none";
+
+  // Background music fade-in
+  music.volume = 0;
+
+  music.play().then(() => {
+
+    let volume = 0;
+
+    const fade = setInterval(() => {
+      volume = Math.min(volume + 0.02, 0.7);
+      music.volume = volume;
+
+      if (volume >= 0.7) {
+        clearInterval(fade);
+      }
+    }, 150);
+
+  }).catch(error => {
+    console.warn("Music could not start:", error);
+  });
+
+  // Begin typewriting
+  setTimeout(typeNext, 700);
+}
+startButton.addEventListener("click", startExperience);
+
+</script>
+
+</body>
+</html>
